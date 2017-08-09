@@ -1,0 +1,356 @@
+<template>
+  <div class="app flex flex-col">
+    <header>
+      <span class="rel">
+        ITOUZI-UIkit
+        <span class="badge">{{ status === 0 ? 'PC' : 'H5' }}</span>
+      </span>
+    </header>
+    
+    <main class="flex flex-grow">
+      <aside>
+        <h2>Instruction</h2>
+        <ul>
+          <router-link tag="li" to="/usage">Usage</router-link>
+        </ul>
+        <div v-show="status === 0">
+          <h2>Style</h2>
+          <ul>
+            <router-link tag="li" to="/pc/button">Button</router-link>
+            <router-link tag="li" to="/pc/form">Form</router-link>
+          </ul>
+          <h2>Widget</h2>
+        </div>
+
+        <div class="menu-toggle flex">
+          <div :class="{'active': status === 0}" @click="status = 0">PC</div>
+          <div :class="{'active': status === 1}" @click="status = 1">Mobile</div>
+        </div>
+      </aside>
+
+      <article>
+        <router-view></router-view>
+      </article>
+    </main>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      status: 0
+    }
+  }
+}
+</script>
+
+<style>
+
+/* ---------------------------------- App.vue style ---------------------------------- */
+.app {
+  height: 100%;
+}
+header {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #EE5555;
+  color: #fff;
+  font-size: 24px;
+  padding-left: 30px;
+}
+aside {
+  width: 220px;
+  padding-left: 30px;
+  padding-top: 20px;
+  background-color: #efefef;
+  position: relative;
+  flex-shrink: 0;
+}
+aside ul {
+  margin-bottom: 20px;
+}
+aside li {
+  line-height: 28px;
+  transition: all .2s;
+  padding-left: 20px;
+  cursor: pointer;
+}
+aside li:hover {
+  color: #EE5555;
+}
+article {
+  width: 100%;
+  padding-top: 20px;
+  padding-left: 50px;
+}
+h2 {
+  font-size: 13px;
+  font-weight: normal;
+  color: #999;
+  margin-bottom: 10px;
+}
+.menu-toggle {
+  position: absolute;
+  left: 15%; bottom: 30px;
+  width: 70%;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+}
+.menu-toggle div {
+  width: 50%;
+  transition: all .2s;
+  cursor: pointer;
+  border: 1px solid #EE5555;
+}
+.menu-toggle div:not(.active):hover {
+  color: #EE5555;
+}
+.menu-toggle .active {
+  background-color: #EE5555;
+  color: #fff;
+}
+.rel {
+  position: relative;
+}
+.badge {
+  position: absolute;
+  right: -25px; top: -2px;
+  height: 14px;
+  line-height: 14px;
+  border-radius: 7px;
+  padding: 0 7px;
+  background-color: #f7ba2a;
+  color: #fff;
+  font-size: 9px;
+}
+
+/* ----------------------------------- Global style ----------------------------------- */
+.router-link-active {
+  color: #EE5555;
+}
+.g-holder {
+  width: 800px;
+}
+section {
+  margin-bottom: 50px;
+}
+h3 {
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+h4 {
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 15px;
+  color: #666;
+}
+.ml30 {
+  margin-left: 30px;
+}
+pre {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #f7f7f7;
+}
+code {
+  font-size: 12px;
+  line-height: 1.7;
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+/* ----------------------------------------------------------------------------------- */
+/* ----------------------------------- Basic Reset ----------------------------------- */
+/* ----------------------------------------------------------------------------------- */
+html {
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: 'MicroSoft YaHei', Arial
+}
+body {
+  height: 100%;
+  color: #333;
+}
+*, 
+*:before, 
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+:active,
+:hover,
+:focus {
+  outline: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+}
+ul, 
+ol {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+img {
+  border-style: none;
+}
+/* ----------------------------------- 表单元素 ----------------------------------- */
+input,
+button,
+select,
+textarea {
+  outline: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-appearance: none;
+}
+button {
+  border: 0;
+  background: none; 
+}
+textarea {
+  resize: none;
+}
+
+/* ----------------------------------------------------------------------------------- */
+/* ----------------------------------- Basic Tools ----------------------------------- */
+/* ----------------------------------------------------------------------------------- */
+.clearfix:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  opacity: 0;
+}
+.bg {
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* 单行文本超长省略... */
+.ell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* ----------------------------------- 布局相关 ----------------------------------- */
+.flex {
+  display: -webkit-box;
+  display: box;
+  display: -webkit-flex;
+  display: flex;
+}
+.flex-col {
+  -webkit-box-orient: vertical;
+          box-orient: vertical;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+.flex-grow {
+  -webkit-box-flex: 1;
+          box-flex: 1;
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+}
+/* 水平居中（flex 方向为水平） */
+.center {
+  -webkit-box-pack: center;
+          box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+/* 垂直居中（flex 方向为水平） */
+.middle {
+  -webkit-box-align: center;
+          box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+/* 上下左右居中，元素须有宽高 */
+.central {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  margin: auto;
+}
+
+/*
+ * Atom One Light by Daniel Gamage
+ * Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+ */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #383a42;
+  background: #fafafa;
+}
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+.hljs-literal {
+  color: #0184bb;
+}
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #50a14f;
+}
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: bold;
+}
+.hljs-link {
+  text-decoration: underline;
+}
+</style>

@@ -1,0 +1,85 @@
+/* ---------------------------------- 按钮 ---------------------------------- */
+.btn {
+  display: inline-block;
+  width: 170px; height: 40px; line-height: 38px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .2s;
+}
+.btn-main {
+  border-color: #ee5555;
+  background-color: #ee5555;
+  color: #fff;
+}
+.btn-main:hover {
+  border-color: #eb2323;
+  background-color: #eb2323;
+}
+.btn-sub {
+  border-color: #e0e4ed;
+  color: #666;
+}
+.btn-sub:hover {
+  border-color: #ee5555;
+}
+.btn-lg {
+  width: 240px;
+}
+.btn-sm {
+  width: 110px; height: 32px; line-height: 30px;
+  font-size: 12px;
+}
+.disabled {
+  user-select: none;
+  pointer-events: none;
+  cursor: not-allowed;
+  cursor: no-drop;
+}
+.btn-main.disabled,
+.btn-main.disabled:hover {
+  border-color: #ededed;
+  background-color: #ededed;
+  color: #999;
+}
+.btn-sub.disabled,
+.btn-sub.disabled:hover {
+  border-color: #ededed;
+  color: #999;
+}
+
+/* ---------------------------------- 输入框 ---------------------------------- */
+.ipt {
+	position: relative;
+	width: 100%; height: 40px; line-height: 40px; 
+	font-size: 0px;
+	overflow: hidden;
+}
+.ipt input {
+	width: 100%; height: 100%;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ccc;
+	border-radius: 3px;
+	font-size: 14px;
+	padding-left: 10px;
+	transition: all .3s;
+}
+.ipt input:hover {
+	border-color: #666;
+}
+.ipt input:focus {
+	border-color: #33ccff;
+}
+.ipt input::-webkit-input-placeholder {
+  color: #999;
+}
+.ipt.disabled input,
+.ipt.disabled input:hover {
+	background-color: #ededed;
+	border-color: #ccc;
+	opacity: .8;
+}
