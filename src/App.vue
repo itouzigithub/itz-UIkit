@@ -9,17 +9,26 @@
     
     <main class="flex flex-grow">
       <aside>
-        <h2>Instruction</h2>
+        <h2>Doc</h2>
         <ul>
-          <router-link tag="li" to="/usage">Usage</router-link>
+          <router-link tag="li" to="/instruction">Instruction</router-link>
         </ul>
         <div v-show="status === 0">
           <h2>Style</h2>
           <ul>
             <router-link tag="li" to="/pc/button">Button</router-link>
             <router-link tag="li" to="/pc/form">Form</router-link>
+            <router-link tag="li" to="/pc/pagination">Pagination</router-link>
           </ul>
           <h2>Widget</h2>
+          <ul>
+            <router-link tag="li" to="/pc/tab">Tab</router-link>
+            <router-link tag="li" to="/pc/popbox">Popbox</router-link>
+          </ul>
+          <h2>Utility</h2>
+          <ul>
+            <router-link tag="li" to="/pc/utility">utils</router-link>
+          </ul>
         </div>
 
         <div class="menu-toggle flex">
@@ -41,6 +50,14 @@ export default {
     return {
       status: 0
     }
+  },
+  mounted () {
+    f();
+  },
+  watch: {
+    $route () {
+      setTimeout(f, 0)
+    }
   }
 }
 </script>
@@ -50,15 +67,20 @@ export default {
 /* ---------------------------------- App.vue style ---------------------------------- */
 .app {
   height: 100%;
+  overflow: hidden;
 }
 header {
   width: 100%;
   height: 50px;
   line-height: 50px;
-  background-color: #EE5555;
+  background-color: #ee5555;
   color: #fff;
   font-size: 24px;
   padding-left: 30px;
+  flex-shrink: 0;
+}
+main {
+  height: calc(100% - 50px);
 }
 aside {
   width: 220px;
@@ -84,12 +106,14 @@ article {
   width: 100%;
   padding-top: 20px;
   padding-left: 50px;
+  padding-bottom: 50px;
+  overflow-y: auto;
 }
 h2 {
   font-size: 13px;
   font-weight: normal;
   color: #999;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .menu-toggle {
   position: absolute;
@@ -151,16 +175,26 @@ h4 {
 .ml30 {
   margin-left: 30px;
 }
+.mb20 {
+  margin-bottom: 20px;
+}
 pre {
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 10px 20px;
   background-color: #f7f7f7;
 }
 code {
-  font-size: 12px;
+  font-size: 13px;
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
   line-height: 1.7;
   background-color: transparent !important;
   padding: 0 !important;
+}
+.g-link {
+  color: #ee5555;
+}
+.g-link:hover {
+  text-decoration: underline;
 }
 
 /* ----------------------------------------------------------------------------------- */
@@ -298,7 +332,6 @@ textarea {
 .hljs-comment,
 .hljs-quote {
   color: #a0a1a7;
-  font-style: italic;
 }
 .hljs-doctag,
 .hljs-keyword,

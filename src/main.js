@@ -12,6 +12,9 @@ Vue.directive('hl', function(el) {
   hljs.highlightBlock(el);
 })
 
+require('../static/itz-ui.css');
+window.f = require('../static/itz-ui.js')
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
