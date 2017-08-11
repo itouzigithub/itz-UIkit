@@ -13,14 +13,16 @@ itz.toast = (function () {
   var lock = false;
   var wrapper;
   var child;
+
   return function (val, type) {
     if (lock) return;
     lock = true;
+
     val = val || '操作成功';
     if (type === undefined) {
       type = true
     }
-
+    // 确保只创建一个
     if (!wrapper) {
       wrapper = document.createElement('div');
       child = document.createElement('div');

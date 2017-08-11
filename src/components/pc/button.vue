@@ -34,18 +34,18 @@
       <div>
         <div class="btn btn-sub">
           加载中
-          <i class="btn-spinner"></i>
+          <i class="btn-spinner icon-spinner"></i>
         </div>
         <div class="btn btn-sub btn-sm ml30">
           加载中
-          <i class="btn-spinner"></i>
+          <i class="btn-spinner icon-spinner"></i>
         </div>
       </div>
       <pre><code class="html" v-hl>&lt;div class="btn btn-sub">
-  加载中&lt;i class="btn-spinner">&lt;/i>
+  加载中&lt;i class="btn-spinner icon-spinner">&lt;/i>
 &lt;/div>
 &lt;div class="btn btn-sub btn-sm">
-  加载中&lt;i class="btn-spinner">&lt;/i>
+  加载中&lt;i class="btn-spinner icon-spinner">&lt;/i>
 &lt;/div></code></pre>
     </section>
   </div>

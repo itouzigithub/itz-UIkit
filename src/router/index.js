@@ -2,13 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Instruction from '@/components/Instruction'
 
+import icon from '@/components/common/icon'
 import button from '@/components/pc/button'
 import form from '@/components/pc/form'
 import tab from '@/components/pc/tab'
 import pagination from '@/components/pc/pagination'
 import popbox from '@/components/pc/popbox'
-
-import utility from '@/components/pc/utility.vue'
+import utility from '@/components/pc/utility'
 
 Vue.use(Router)
 
@@ -21,8 +21,11 @@ export default new Router({
     },
     {
       path: '/instruction',
-      name: 'Instruction',
       component: Instruction
+    },
+    {
+      path: '/icon',
+      component: icon
     },
     {
       path: '/pc/button',

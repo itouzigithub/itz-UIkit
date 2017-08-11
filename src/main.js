@@ -6,14 +6,13 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+require('../static/itz-ui.css')
+require('../static/utility/toast.js')
+
 // 代码高亮
-var hljs = require('highlight.js')
 Vue.directive('hl', function(el) {
   hljs.highlightBlock(el);
 })
-
-require('../static/itz-ui.css');
-window.f = require('../static/itz-ui.js')
 
 /* eslint-disable no-new */
 new Vue({

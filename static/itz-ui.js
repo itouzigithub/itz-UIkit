@@ -34,6 +34,57 @@
   })
 
   /**
+   * 模拟 select 元件
+   */
+  var $select = $('.js-select');
+  if ($select) {
+    $(document).on('click', function () {
+      $select.attr('status', '0');
+      $select.find('ul').fadeOut(200);
+    })
+
+    $select.each(function (index, el) {
+      (function () {
+        var $el = $(el);
+        var $ipt = $el.find('.ipt-select');
+        var $ul = $el.find('ul');
+        var $ini = $el.find('li').first().contents();
+
+        // 默认以第一项为选中项
+        if ($ini) {
+          $ipt.append($ini.clone())
+        } else {
+          return console.error('at least one option must be offered')
+        }
+
+        $el.on('click', function (event) {
+          event.stopPropagation();
+          var $target = $(event.target);
+          
+          if ($target.hasClass('js-option')) {
+            var $clone = $target.contents().clone();
+            $ipt.empty().append($clone);
+            $ul.fadeOut(200);
+            $el.attr('status', '0');
+            return
+          }
+
+          if ($target.parent().hasClass('js-option')) {
+            var $clone = $target.parent().contents().clone();
+            $ipt.empty().append($clone);
+            $ul.fadeOut(200);
+            $el.attr('status', '0');
+            return
+          }
+
+          $el.attr('status', '1');
+          $ul.fadeIn(200);
+        })
+      })()
+    })
+  }
+
+  /**
    * 输入域字数限制
    */
   $('.js-maxlength').each(function (index, el) {

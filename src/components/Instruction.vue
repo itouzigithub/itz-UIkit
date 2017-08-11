@@ -19,7 +19,7 @@
 
     <section>
       <h3>样式与逻辑分离</h3>
-      <h4 class="p">widget 原件由样式和逻辑组成，由于采用 jQuery，选择器既会用于设置样式，又会用于 js 调用，从而形成一种糟糕的耦合关系。出于解耦的考虑，所有供 js 调用的 class 类名均以 js- 为前缀，并且仅供 js 调用，不得用于设置样式。这样做的好处是，样式可以自由定义，完全不影响组件内部的逻辑</h4>
+      <h4>widget 原件由样式和逻辑组成，由于采用 jQuery，选择器既会用于设置样式，又会用于 js 调用，从而形成一种糟糕的耦合关系。出于解耦的考虑，所有供 js 调用的 class 类名均以 js- 为前缀，并且仅供 js 调用，不得用于设置样式。这样做的好处是，样式可以自由定义，完全不影响组件内部的逻辑</h4>
       <pre><code class="html" v-hl>&lt;div class="js-widget widget-style">&lt;/div>
 &lt;div class="js-widget widget-another-style">&lt;/div></code></pre>
     </section>
@@ -32,14 +32,8 @@
 
     <section>
       <h3>开发注意</h3>
-      <h4 class="p">main.js 中，itz-ui.js 被注册为一个全局函数 f，每次路由切换，都会执行 f（参见 App.vue），原因是随着路由切换，DOM 节点会不断销毁与重建，必须重新执行 f 才能使 jQuery 组件生效</h4>
-      <h4 class="p">尽管如此，由于热更新，组件 DOM 更新了，但是相应的 js 却没有重新加载，也会导致组件失效。解决办法是刷新页面</h4>
+      <h4>main.js 中，itz-ui.js 被注册为一个全局函数 f，每次路由切换，都会执行 f（参见 App.vue），原因是随着路由切换，DOM 节点会不断销毁与重建，必须重新执行 f 才能使 jQuery 组件生效</h4>
+      <h4>尽管如此，由于热更新，组件 DOM 更新了，但是相应的 js 却没有重新加载，也会导致组件失效。解决办法是刷新页面</h4>
     </section>
   </div>
 </template>
-
-<style scoped>
-  .p {
-    line-height: 1.8;
-  }
-</style>

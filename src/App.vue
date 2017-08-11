@@ -16,6 +16,7 @@
         <div v-show="status === 0">
           <h2>Style</h2>
           <ul>
+            <router-link tag="li" to="/icon">Icon</router-link>
             <router-link tag="li" to="/pc/button">Button</router-link>
             <router-link tag="li" to="/pc/form">Form</router-link>
             <router-link tag="li" to="/pc/pagination">Pagination</router-link>
@@ -52,7 +53,7 @@ export default {
     }
   },
   mounted () {
-    f();
+    window.f = require('../static/itz-ui.js')
   },
   watch: {
     $route () {
@@ -159,7 +160,7 @@ h2 {
   width: 800px;
 }
 section {
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 h3 {
   font-size: 18px;
@@ -169,8 +170,9 @@ h3 {
 h4 {
   font-size: 14px;
   font-weight: normal;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: #666;
+  line-height: 1.7;
 }
 .ml30 {
   margin-left: 30px;
@@ -186,6 +188,7 @@ pre {
 code {
   font-size: 13px;
   font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  /* font-family: Consolas, Monaco, 'Andale Mono', monospace; */
   line-height: 1.7;
   background-color: transparent !important;
   padding: 0 !important;

@@ -13,7 +13,6 @@ itz.toast('操作失败', false)</code></pre>
 </template>
 
 <script>
-	require('../../../static/utility/toast.js')
 	export default {
 		methods: {
 			toast (text, type) {
