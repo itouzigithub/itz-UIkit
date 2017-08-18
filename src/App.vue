@@ -19,6 +19,7 @@
             <router-link tag="li" to="/icon">Icon</router-link>
             <router-link tag="li" to="/pc/button">Button</router-link>
             <router-link tag="li" to="/pc/form">Form</router-link>
+            <router-link tag="li" to="/pc/table">Table</router-link>
             <router-link tag="li" to="/pc/pagination">Pagination</router-link>
           </ul>
           <h2>Widget</h2>

@@ -6,6 +6,7 @@ import icon from '@/components/common/icon'
 import button from '@/components/pc/button'
 import form from '@/components/pc/form'
 import tab from '@/components/pc/tab'
+import table from '@/components/pc/table'
 import pagination from '@/components/pc/pagination'
 import popbox from '@/components/pc/popbox'
 import utility from '@/components/pc/utility'
@@ -38,6 +39,10 @@ export default new Router({
     {
       path: '/pc/tab',
       component: tab
+    },
+    {
+      path: '/pc/table',
+      component: table
     },
     {
       path: '/pc/pagination',
