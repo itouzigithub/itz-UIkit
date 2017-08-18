@@ -251,13 +251,13 @@ textarea::-webkit-input-placeholder {
 /* ---------------------------------- tooltip ---------------------------------- */
 .tooltip {
   position: absolute;
-  height: 28px;
-  line-height: 26px;
-  padding: 0 15px;
+  height: 38px;
+  line-height: 36px;
+  padding: 0 25px;
   font-size: 13px;
-  border: 1px solid #ccc;
+  border: 1px solid #d5d5d5;
   border-radius: 3px;
-  box-shadow: 1px 1px 5px rgba(100, 100, 100, .3);
+  box-shadow: 1px 1px 5px rgba(100, 100, 100, .34);
   background-color: #fff;
   z-index: 9;
   display: none;
@@ -269,6 +269,18 @@ textarea::-webkit-input-placeholder {
   width: 8px; height: 8px;
   border: 4px solid transparent;
   border-top: 4px solid #fff;
+}
+.tooltip i {
+  display: block;
+  display: none\9;
+  position: absolute;
+  bottom: -5px; left: 50%; margin-left: -5px;
+  width: 10px;
+  height: 10px;
+  transform-origin: center center;
+  transform: rotate(45deg);
+  background: #fff;
+  box-shadow: 2px 2px 4px -1px rgba(100, 100, 100, .34);
 }
 
 /* ---------------------------------- Tab 标签 ---------------------------------- */

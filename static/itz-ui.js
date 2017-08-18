@@ -138,10 +138,11 @@
     (function () {
       var $tip = $('<div class="tooltip"></div>');
       $tip.text($(el).attr('tooltip'));
+      $tip.append($('<i></i>'))
       $('body').append($tip);
 
-      var x = $(el).offset().left + $(el).width() / 2 - $tip.width() / 2;
-      var y = $(el).offset().top - 36;
+      var x = $(el).offset().left + $(el).outerWidth() / 2 - $tip.outerWidth() / 2;
+      var y = $(el).offset().top - 50;
 
       $tip.css({
         top: y + 'px',
