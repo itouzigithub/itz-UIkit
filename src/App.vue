@@ -26,6 +26,7 @@
           <ul>
             <router-link tag="li" to="/pc/tab">Tab</router-link>
             <router-link tag="li" to="/pc/popbox">Popbox</router-link>
+            <router-link tag="li" to="/pc/toolTip">ToolTip</router-link>
           </ul>
           <h2>Utility</h2>
           <ul>

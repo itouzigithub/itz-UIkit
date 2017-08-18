@@ -248,6 +248,29 @@ textarea::-webkit-input-placeholder {
   background-color: #F8F9FB;
 }
 
+/* ---------------------------------- tooltip ---------------------------------- */
+.tooltip {
+  position: absolute;
+  height: 28px;
+  line-height: 26px;
+  padding: 0 15px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px rgba(100, 100, 100, .3);
+  background-color: #fff;
+  z-index: 9;
+  display: none;
+}
+.tooltip:after {
+  content: '';
+  position: absolute;
+  bottom: -8px; left: 50%; margin-left: -4px;
+  width: 8px; height: 8px;
+  border: 4px solid transparent;
+  border-top: 4px solid #fff;
+}
+
 /* ---------------------------------- Tab 标签 ---------------------------------- */
 .itz-tab-normal,
 .itz-tab-square {

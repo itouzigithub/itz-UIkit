@@ -9,6 +9,7 @@ import tab from '@/components/pc/tab'
 import table from '@/components/pc/table'
 import pagination from '@/components/pc/pagination'
 import popbox from '@/components/pc/popbox'
+import toolTip from '@/components/pc/toolTip'
 import utility from '@/components/pc/utility'
 
 Vue.use(Router)
@@ -51,6 +52,10 @@ export default new Router({
     {
       path: '/pc/popbox',
       component: popbox
+    },
+    {
+      path: '/pc/toolTip',
+      component: toolTip
     },
     {
       path: '/pc/utility',

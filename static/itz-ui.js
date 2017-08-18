@@ -131,6 +131,31 @@
     })()
   })
 
+  /**
+   * tooltip
+   */
+  $('[tooltip]').each(function (index, el) {
+    (function () {
+      var $tip = $('<div class="tooltip"></div>');
+      $tip.text($(el).attr('tooltip'));
+      $('body').append($tip);
+
+      var x = $(el).offset().left + $(el).width() / 2 - $tip.width() / 2;
+      var y = $(el).offset().top - 36;
+
+      $tip.css({
+        top: y + 'px',
+        left: x + 'px'
+      })
+
+      $(el).hover(function () {
+        $tip.show();
+      }, function () {
+        $tip.hide();
+      })
+    })()
+  })
+
 })
 
 
