@@ -15,7 +15,6 @@ import utility from '@/components/pc/utility'
 Vue.use(Router)
 
 export default new Router({
-	mode: 'history',
   routes: [
     {
       path: '/',

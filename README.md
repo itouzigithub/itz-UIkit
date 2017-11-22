@@ -1,6 +1,6 @@
 # itz-ui
 
-> A Vue.js project
+> [doc](https://itouzigithub.github.io/pages/uikit/index.html)
 
 ## Build Setup
 
