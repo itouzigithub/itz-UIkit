@@ -2,15 +2,17 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Instruction from '@/components/Instruction'
 
-import icon from '@/components/common/icon'
-import button from '@/components/pc/button'
-import form from '@/components/pc/form'
-import tab from '@/components/pc/tab'
-import table from '@/components/pc/table'
-import pagination from '@/components/pc/pagination'
-import popbox from '@/components/pc/popbox'
-import toolTip from '@/components/pc/toolTip'
-import utility from '@/components/pc/utility'
+import icon from '@/components/icon'
+import button from '@/components/button'
+import form from '@/components/form'
+import tab from '@/components/tab'
+import table from '@/components/table'
+import pagination from '@/components/pagination'
+import popbox from '@/components/popbox'
+import toolTip from '@/components/toolTip'
+import utility from '@/components/utility'
+
+import log1 from '@/log/1.x.x'
 
 Vue.use(Router)
 
@@ -29,36 +31,41 @@ export default new Router({
       component: icon
     },
     {
-      path: '/pc/button',
+      path: '/button',
       component: button
     },
     {
-      path: '/pc/form',
+      path: '/form',
       component: form
     },
     {
-      path: '/pc/tab',
+      path: '/tab',
       component: tab
     },
     {
-      path: '/pc/table',
+      path: '/table',
       component: table
     },
     {
-      path: '/pc/pagination',
+      path: '/pagination',
       component: pagination
     },
     {
-      path: '/pc/popbox',
+      path: '/popbox',
       component: popbox
     },
     {
-      path: '/pc/toolTip',
+      path: '/toolTip',
       component: toolTip
     },
     {
-      path: '/pc/utility',
+      path: '/utility',
       component: utility
+    },
+    // log
+    {
+      path: '/1.x.x',
+      component: log1
     }
   ]
 })

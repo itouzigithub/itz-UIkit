@@ -9,12 +9,27 @@
     </section>
 
     <section>
-      <h3>基本用法</h3>
-      <h4>直接引入源文件即可，源文件在该项目 static 文件夹下，<a class="g-link" href="https://github.com/itouzigithub/itz-UIkit" target="_blank">地址</a></h4>
-      <h4>• style 组件，只需引入 itz-ui.css 文件，其中的某些功能如需 js 实现，则需引入 itz-ui.js</h4>
-      <h4>• widget 组件，需同时引入 itz-ui.css 和 itz-ui.js</h4>
-      <h4>• utility 组件，只需引入 static/utility/ 下的相应 js 文件，然后调用相关方法即可</h4>
-      <h4>itz-ui.js 依赖 jQuery，utility 中的组件，如果文件名含 "jquery"，则依赖 jQuery，不含，则不依赖</h4>
+      <h3>如何使用</h3>
+      <pre><code>// 引用目录
+itouzi
+  | - fis-sourceFile
+            | - public
+                  | - component
+                          | - static
+// 示例
+/component/static/itz-ui.css
+</code></pre>
+    </section>
+
+    <section>
+      <h3>组件概览</h3>
+      <h4>itz-ui.js 依赖 jQuery</h4>
+      <h4>utility 中的组件，如果文件名含 "jquery"，则依赖 jQuery，不含，则不依赖</h4>
+      <h4>• <mark>foundation.css</mark> PC 端通用 CSS 基础库</h4>
+      <h4>• <mark>itz-ui.css</mark> 组件样式库</h4>
+      <h4>• <mark>itz-ui.js</mark> widget 组件功能库</h4>
+      <h4>utility 组件，仅依赖相应 js 文件，不依赖 CSS</h4>
+      <h4>• <mark>itz-toast.js</mark></h4>
     </section>
 
     <section>

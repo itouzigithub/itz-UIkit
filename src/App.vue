@@ -3,7 +3,7 @@
     <header>
       <span class="rel">
         ITOUZI-UIkit
-        <span class="badge">{{ status === 0 ? 'PC' : 'H5' }}</span>
+        <span class="badge">1.0.0</span>
       </span>
     </header>
     
@@ -13,31 +13,28 @@
         <ul>
           <router-link tag="li" to="/instruction">Instruction</router-link>
         </ul>
-        <div v-show="status === 0">
-          <h2>Style</h2>
-          <ul>
-            <router-link tag="li" to="/icon">Icon</router-link>
-            <router-link tag="li" to="/pc/button">Button</router-link>
-            <router-link tag="li" to="/pc/form">Form</router-link>
-            <router-link tag="li" to="/pc/table">Table</router-link>
-            <router-link tag="li" to="/pc/pagination">Pagination</router-link>
-          </ul>
-          <h2>Widget</h2>
-          <ul>
-            <router-link tag="li" to="/pc/tab">Tab</router-link>
-            <router-link tag="li" to="/pc/popbox">Popbox</router-link>
-            <router-link tag="li" to="/pc/toolTip">ToolTip</router-link>
-          </ul>
-          <h2>Utility</h2>
-          <ul>
-            <router-link tag="li" to="/pc/utility">utils</router-link>
-          </ul>
-        </div>
-
-        <div class="menu-toggle flex">
-          <div :class="{'active': status === 0}" @click="status = 0">PC</div>
-          <div :class="{'active': status === 1}" @click="status = 1">Mobile</div>
-        </div>
+        <h2>Style</h2>
+        <ul>
+          <router-link tag="li" to="/icon">Icon</router-link>
+          <router-link tag="li" to="/button">Button</router-link>
+          <router-link tag="li" to="/form">Form</router-link>
+          <router-link tag="li" to="/table">Table</router-link>
+          <router-link tag="li" to="/pagination">Pagination</router-link>
+        </ul>
+        <h2>Widget</h2>
+        <ul>
+          <router-link tag="li" to="/tab">Tab</router-link>
+          <router-link tag="li" to="/popbox">Popbox</router-link>
+          <router-link tag="li" to="/toolTip">ToolTip</router-link>
+        </ul>
+        <h2>Utility</h2>
+        <ul>
+          <router-link tag="li" to="/utility">utils</router-link>
+        </ul>
+        <h2>Change Log</h2>
+        <ul>
+          <router-link tag="li" to="/1.x.x">1.x.x</router-link>
+        </ul>
       </aside>
 
       <article>
@@ -49,11 +46,6 @@
 
 <script>
 export default {
-  data () {
-    return {
-      status: 0
-    }
-  },
   mounted () {
     window.f = require('../static/itz-ui.js')
   },
@@ -76,9 +68,10 @@ header {
   width: 100%;
   height: 50px;
   line-height: 50px;
-  background-color: #ee5555;
+  background-color: #112378;
+  background-color: #e33946;
   color: #fff;
-  font-size: 24px;
+  font-size: 20px;
   padding-left: 30px;
   flex-shrink: 0;
 }
@@ -107,8 +100,8 @@ aside li:hover {
 }
 article {
   width: 100%;
-  padding-top: 20px;
-  padding-left: 50px;
+  padding-top: 30px;
+  padding-left: 100px;
   padding-bottom: 50px;
   overflow-y: auto;
 }
@@ -118,35 +111,14 @@ h2 {
   color: #999;
   margin-bottom: 5px;
 }
-.menu-toggle {
-  position: absolute;
-  left: 15%; bottom: 30px;
-  width: 70%;
-  height: 36px;
-  line-height: 36px;
-  text-align: center;
-}
-.menu-toggle div {
-  width: 50%;
-  transition: all .2s;
-  cursor: pointer;
-  border: 1px solid #EE5555;
-}
-.menu-toggle div:not(.active):hover {
-  color: #EE5555;
-}
-.menu-toggle .active {
-  background-color: #EE5555;
-  color: #fff;
-}
 .rel {
   position: relative;
 }
 .badge {
   position: absolute;
-  right: -25px; top: -2px;
-  height: 14px;
-  line-height: 14px;
+  right: -40px; top: -5px;
+  height: 15px;
+  line-height: 15px;
   border-radius: 7px;
   padding: 0 7px;
   background-color: #f7ba2a;
@@ -184,13 +156,12 @@ h4 {
 }
 pre {
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   background-color: #f7f7f7;
 }
 code {
   font-size: 13px;
   font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  /* font-family: Consolas, Monaco, 'Andale Mono', monospace; */
   line-height: 1.7;
   background-color: transparent !important;
   padding: 0 !important;
@@ -202,86 +173,19 @@ code {
   text-decoration: underline;
 }
 
-/* ----------------------------------------------------------------------------------- */
-/* ----------------------------------- Basic Reset ----------------------------------- */
-/* ----------------------------------------------------------------------------------- */
-html {
-  height: 100%;
-  box-sizing: border-box;
-  font-size: 14px;
-  font-family: 'MicroSoft YaHei', Arial
-}
-body {
-  height: 100%;
-  color: #333;
-}
-*, 
-*:before, 
-*:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-:active,
-:hover,
-:focus {
-  outline: 0;
-}
-a {
+mark {
+  background-color: #f2f2f2;
+  padding: 0 8px;
+  font-size: 13px;
+  font: inherit;
   color: inherit;
-  text-decoration: none;
-  background-color: transparent;
-}
-ul, 
-ol {
-  list-style: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-img {
-  border-style: none;
-}
-/* ----------------------------------- 表单元素 ----------------------------------- */
-input,
-button,
-select,
-textarea {
-  outline: none;
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  -webkit-appearance: none;
-}
-button {
-  border: 0;
-  background: none; 
-}
-textarea {
-  resize: none;
 }
 
 /* ----------------------------------------------------------------------------------- */
-/* ----------------------------------- Basic Tools ----------------------------------- */
+/* ----------------------------------- Basic Style ----------------------------------- */
 /* ----------------------------------------------------------------------------------- */
-.clearfix:after {
-  content: '';
-  display: block;
-  height: 0;
-  clear: both;
-  opacity: 0;
-}
-.bg {
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-/* 单行文本超长省略... */
-.ell {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+body {
+  color: #333;
 }
 /* ----------------------------------- 布局相关 ----------------------------------- */
 .flex {
