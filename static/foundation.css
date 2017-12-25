@@ -64,6 +64,9 @@ img {
   vertical-align: middle;
   border-style: none;
 }
+label {
+  cursor: pointer;
+}
 /* ----------------------------------- 表单元素 ----------------------------------- */
 input,
 button,
@@ -81,6 +84,7 @@ button {
 }
 textarea {
   resize: none;
+  overflow-y: auto;
 }
 ::-webkit-clear-button {
   -webkit-appearance: none; 
@@ -134,7 +138,7 @@ textarea {
 .tc  { text-align: center }
 .vm  { vertical-align: middle }
 .ovh { overflow: hidden }
-.ovy { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+.ovy { overflow-y: auto; }
 .lighter { font-weight: 300 }
 
 /* 以 1rem = 14px 为基准 */

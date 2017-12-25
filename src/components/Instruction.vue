@@ -46,9 +46,54 @@ itouzi
     </section>
 
     <section>
+      <h3>模块化方案</h3>
+      <h4>模块定义</h4>
+
+<pre><code v-hl>(function (global, factory) {
+  if (typeof exports === 'object' && typeof module !== 'undefined') {
+    module.exports = factory()
+  } else {
+    var ret = factory()
+    if (global.itz) {
+      itz.$ = itz.$ || {};
+      itz.$.Toast = ret
+    }
+    return ret
+  }
+})(window, function () {
+  var _privateProperty = '';
+  var _privateFunc = function () {};
+
+  return function () {}
+})</code></pre>
+
+      <h4 class="mt20">模块引用</h4>
+<pre><code v-hl>// 如果直接用 script 引入 js 文件，则*必须*事先定义 itz 全局变量
+// 来自组件库的方法统一定义在 itz.$ 命名空间下
+&lt;script>window.itz = {};&lt;/script>
+&lt;script src="/Toast.js">&lt;/script>
+&lt;script>
+  itz.$.Toast('操作成功');
+&lt;/script>
+
+// 采用 fis3 编译的项目，如果使用 __inline 方式引用，分两种情况
+// 直接引用，则与 script 标签引用的方式一样，需要事先定义 itz 全局变量
+__inline('/public/component/static/Toast.js')
+
+// 模块化引用（推荐），不依赖 itz 全局变量
+var toast = __inline('/public/component/static/Toast.js')
+
+// CommonJS
+// 本文档在 node 环境下构建，因此用 require
+var toast = require('../Toast.js')</code></pre>
+    </section>
+
+    <section>
       <h3>开发注意</h3>
       <h4>main.js 中，itz-ui.js 被注册为一个全局函数 f，每次路由切换，都会执行 f（参见 App.vue），原因是随着路由切换，DOM 节点会不断销毁与重建，必须重新执行 f 才能使 jQuery 组件生效</h4>
       <h4>尽管如此，由于热更新，组件 DOM 更新了，但是相应的 js 却没有重新加载，也会导致组件失效。解决办法是刷新页面</h4>
+      <h4>组件更新后，需更新文档，包括 change log，并上传到 githubpage</h4>
+      <h4>打包上传时注意将 index.html 文件中引入的静态资源路径做修改</h4>
     </section>
   </div>
 </template>

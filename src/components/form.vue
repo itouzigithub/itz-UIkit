@@ -84,19 +84,19 @@
         <i class="icon-angle-up"></i>
         <ul>
           <li class="js-option">
-            <img src="../assets/icecream-01.png" width="18px" style="position: relative; top: 3px">
+            <img src="../assets/icecream-01.png" width="18px">
             <span>选项一</span>
           </li>
           <li class="js-option">
-            <img src="../assets/icecream-02.png" width="18px" style="position: relative; top: 3px">
+            <img src="../assets/icecream-02.png" width="18px">
             <span>选项二</span>
           </li>
           <li class="js-option">
-            <img src="../assets/icecream-03.png" width="18px" style="position: relative; top: 3px">
+            <img src="../assets/icecream-03.png" width="18px">
             <span>选项三</span>
           </li>
           <li class="js-option">
-            <img src="../assets/icecream-04.png" width="18px" style="position: relative; top: 3px">
+            <img src="../assets/icecream-04.png" width="18px">
             <span>选项四</span>
           </li>
         </ul>
@@ -132,6 +132,41 @@
       <pre><code class="html" v-hl>&lt;div class="txt-wrap js-maxlength">
   &lt;textarea placeholder="请输入" rows="3" maxlength="140">&lt;/textarea>
 &lt;/div></code></pre>
+    </section>
+
+    <section>
+      <h3>单选框与复选框</h3>
+      <div>
+        <label>
+          <input type="checkbox" class="ipt-checkbox">
+          <span>复选框</span>
+        </label>
+
+        <label class="ml30">
+          <input type="checkbox" class="ipt-checkbox">
+          <span>复选框</span>
+        </label>
+      </div>
+      <div class="mt15">
+        <label>
+          <input type="radio" name="name" class="ipt-radio">
+          <span>单选框</span>
+        </label>
+
+        <label class="ml30">
+          <input type="radio" name="name" class="ipt-radio">
+          <span>单选框</span>
+        </label>
+      </div>
+
+      <pre><code v-hl>&lt;label>
+  &lt;input type="checkbox" class="ipt-checkbox">
+  &lt;span>复选框&lt;/span>
+&lt;/label>
+&lt;label>
+  &lt;input type="radio" name="name" class="ipt-radio">
+  &lt;span>单选框&lt;/span>
+&lt;/label></code></pre>
     </section>
   </div>
 </template>

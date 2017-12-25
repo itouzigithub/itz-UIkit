@@ -54,7 +54,7 @@
         if ($ini) {
           $ipt.append($ini.clone())
         } else {
-          return console.error('at least one option must be offered')
+          return console.error('select should have at least one option')
         }
 
         $el.on('click', function (event) {
@@ -92,7 +92,10 @@
       // 创建字数限制提示
       var $limiter = $('<div class="txt-limiter"></div>');
       var $txt = $(el).find('textarea');
-      var max = $txt.attr('maxlength');
+      var max = parseInt($txt.attr('maxlength'));
+      if (!max) {
+        console.error('missing attribute: maxlength')
+      }
 
       $limiter.text('0/' + max);
       $(el).append($limiter);
@@ -111,7 +114,7 @@
             $limiter.css({
               color: '#ee5555'
             })
-            var text = $txt.val().slice(0, 140);
+            var text = $txt.val().slice(0, max);
             $txt.val(text);
           }
         }, 0)
@@ -126,7 +129,7 @@
     (function () {
       var $popbox = $(el).parents('.popbox');
       $(el).click(function () {
-        $popbox.fadeOut();
+        $popbox.fadeOut('fast');
       })
     })()
   })

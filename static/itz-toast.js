@@ -1,15 +1,23 @@
 /** 
- * 顶部下滑提示弹框
+ * 提示弹框，三秒后自动消失
  * Author Bison
  * Update 2017-08
  *
  * @val { string } 提示内容
- * @type { boolean } true：成功 false：失败
+ * @type { boolean } true：成功-绿色 false：失败-红色
  */
-if (!window.itz) {
-  window.itz = {}
-}
-itz.toast = (function () {
+(function (global, factory) {
+  if (typeof exports === 'object' && typeof module !== 'undefined') {
+    module.exports = factory()
+  } else {
+    var ret = factory()
+    if (global.itz) {
+      itz.$ = itz.$ || {};
+      itz.$.Toast = ret
+    }
+    return ret
+  }
+})(window, function () {
   var lock = false;
   var wrapper;
   var child;
@@ -86,5 +94,5 @@ itz.toast = (function () {
       lock = false;
     }, 3000);
   }
-})(); 
+}); 
 

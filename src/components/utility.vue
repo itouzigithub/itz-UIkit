@@ -16,7 +16,7 @@ itz.toast('操作失败', false)</code></pre>
 	export default {
 		methods: {
 			toast (text, type) {
-				itz.toast(text, type)
+				Toast(text, type)
 			}
 		}
 	}
