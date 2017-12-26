@@ -8,7 +8,8 @@ window.$ = require('../static/vendor/jquery-2.1.4.min.js')
 
 require('../static/itz-ui.css')
 require('../static/foundation.css')
-window.Toast = require('../static/itz-toast.js')
+require('../static/util.js')
+window.f = require('../static/itz-ui.js')
 
 // 代码高亮
 Vue.directive('hl', function(el) {

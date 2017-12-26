@@ -1,9 +1,16 @@
 (function (fn) {
-	fn();
-	if (typeof exports === 'object' && typeof module !== 'undefined') {
-		module.exports = fn;
-	}
+  if (typeof exports === 'object' && typeof module !== 'undefined') {
+    module.exports = fn;
+  } else {
+    fn()
+  }
 })(function () {
+  
+  var UA = window.navigator.userAgent.toLowerCase();
+  var isIE = UA && /msie|trident/.test(UA);
+  var isIE9 = UA && UA.indexOf('msie 9.0') > 0;
+  var isIE8 = UA && UA.indexOf('msie 8.0') > 0;
+
   /**
    * 标签页组件
    */
@@ -30,6 +37,34 @@
       $icon.click(function () {
         $ipt.val('').focus();
       })
+    })()
+  })
+
+  /**
+   * 输入框文本放大提示功能
+   */
+  $('.js-ipt-reminder').each(function (index, el) {
+    (function () {
+      var $reminder = $('<div class="ipt-reminder"></div>');
+      var $input = $(el);
+      $input.blur(function () {
+        $reminder.hide();
+      })
+      $input.focus(function () {
+        if ($(this).val()) {
+          $reminder.show()
+        }
+      })
+
+      var event = isIE8 || isIE9 ? 'keyup' : 'input'
+      $input.bind(event, function () {
+        var value = $input.val().trim();
+        if (value) {
+          $reminder.text(itz.$.addSpace(value, 4, false)).show()
+        }
+      })
+
+      $reminder.insertBefore($input)
     })()
   })
 
@@ -161,7 +196,3 @@
   })
 
 })
-
-
-
-

@@ -5,18 +5,22 @@ import Instruction from '@/components/Instruction'
 import icon from '@/components/icon'
 import button from '@/components/button'
 import form from '@/components/form'
-import tab from '@/components/tab'
 import table from '@/components/table'
+
+import tab from '@/components/tab'
 import pagination from '@/components/pagination'
 import popbox from '@/components/popbox'
+
 import toolTip from '@/components/toolTip'
-import utility from '@/components/utility'
+import toast from '@/components/util-toast'
+
+import util from '@/components/util'
 
 import log1 from '@/log/1.x.x'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -39,12 +43,13 @@ export default new Router({
       component: form
     },
     {
-      path: '/tab',
-      component: tab
-    },
-    {
       path: '/table',
       component: table
+    },
+    // widget
+    {
+      path: '/tab',
+      component: tab
     },
     {
       path: '/pagination',
@@ -54,13 +59,19 @@ export default new Router({
       path: '/popbox',
       component: popbox
     },
+    // utility
     {
       path: '/toolTip',
       component: toolTip
     },
     {
-      path: '/utility',
-      component: utility
+      path: '/toast',
+      component: toast
+    },
+    // util
+    {
+      path: '/util',
+      component: util
     },
     // log
     {
@@ -69,3 +80,12 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  next();
+  setTimeout(function () {
+    document.querySelector('article').scrollTop = 0;
+  }, 0)
+})
+
+export default router

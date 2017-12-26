@@ -3,7 +3,7 @@
     <header>
       <span class="rel">
         ITOUZI-UIkit
-        <span class="badge">1.0.0</span>
+        <span class="badge">1.0.1</span>
       </span>
     </header>
     
@@ -19,17 +19,21 @@
           <router-link tag="li" to="/button">Button</router-link>
           <router-link tag="li" to="/form">Form</router-link>
           <router-link tag="li" to="/table">Table</router-link>
-          <router-link tag="li" to="/pagination">Pagination</router-link>
         </ul>
         <h2>Widget</h2>
         <ul>
+          <router-link tag="li" to="/pagination">Pagination</router-link>
           <router-link tag="li" to="/tab">Tab</router-link>
           <router-link tag="li" to="/popbox">Popbox</router-link>
-          <router-link tag="li" to="/toolTip">ToolTip</router-link>
         </ul>
         <h2>Utility</h2>
         <ul>
-          <router-link tag="li" to="/utility">utils</router-link>
+          <router-link tag="li" to="/toolTip">ToolTip</router-link>
+          <router-link tag="li" to="/toast">Toast</router-link>
+        </ul>
+        <h2>util</h2>
+        <ul>
+          <router-link tag="li" to="/util">util.js</router-link>
         </ul>
         <h2>Change Log</h2>
         <ul>
@@ -47,7 +51,7 @@
 <script>
 export default {
   mounted () {
-    window.f = require('../static/itz-ui.js')
+    f()
   },
   watch: {
     $route () {
@@ -145,6 +149,12 @@ h4 {
   font-size: 14px;
   font-weight: normal;
   margin-bottom: 10px;
+  color: #666;
+  line-height: 1.7;
+}
+h5 {
+  font-size: 14px;
+  font-weight: normal;
   color: #666;
   line-height: 1.7;
 }

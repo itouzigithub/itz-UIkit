@@ -15,7 +15,8 @@
     <section>
       <h3>输入框单元</h3>
       <h4>单元格可用于放置文字单位或清除图标，清除图标功能需引入 itz-ui.js</h4>
-      <h4>清除图标的显示与隐藏由 CSS 实现，严重依赖 HTML 结构，请保持 span 与 input 节点的相邻关系，并且 ipt-wrap 中不可放置其它节点</h4>
+      <h4>清除图标的显示与隐藏由 CSS 实现，严重依赖 HTML 结构，请保持 span 与 input 节点的相邻关系</h4>
+
       <div class="ipt-wrap mb20">
         <input class="ipt" type="text" placeholder="提示信息">
         <span class="ipt-cell cell"></span>
@@ -31,6 +32,7 @@
           <i class="ipt-clear icon-times"></i>
         </span>
       </div>
+
       <pre><code class="html" v-hl>&lt;div class="ipt-wrap">
   &lt;input class="ipt" type="text" placeholder="文字单位">
   &lt;span class="ipt-cell">万元&lt;/span>
@@ -41,6 +43,23 @@
     &lt;i class="ipt-clear icon-times">&lt;/i>
   &lt;/span>
 &lt;/div></code></pre>
+    </section>
+
+    <section>
+      <h3>输入框内容放大功能</h3>
+      <h4>依赖 <mark>itz-ui.js</mark> 和 <mark>util.js</mark></h4>
+      <h4>只需要给输入框加上 <mark>js-ipt-reminder</mark> 类名即可</h4>
+      <h4>输入框必须有 relative 定位的父元素</h4>
+      <h4>通常用于身份证号、银行卡密码</h4>
+      <h4>默认每间隔四个字符插入一个空格</h4>
+      <div class="ipt-wrap mb20">
+        <input class="ipt js-ipt-reminder" type="text" placeholder="请输入身份证号">
+      </div>
+
+      <pre><code class="html" v-hl>&lt;div class="ipt-wrap mb20">
+  &lt;input class="ipt js-ipt-reminder" type="text" placeholder="请输入身份证号">
+&lt;/div>
+</code></pre>
     </section>
 
     <section>
@@ -63,7 +82,7 @@
 
     <section>
       <h3>下拉选择框</h3>
-      <h4>宽度自定义；li 标签中仅允许嵌套一层子元素；依赖 itz-ui.js</h4>
+      <h4>宽度自定义；li 标签中仅允许嵌套一层子元素；依赖 <mark>itz-ui.js</mark></h4>
       <div class="ipt-select-wrap js-select" status="0">
         <div class="ipt ipt-select"></div>
         <i class="icon-angle-down"></i>
@@ -125,7 +144,7 @@
 
     <section>
       <h3>输入域字数限制</h3>
-      <h4>依赖 itz-ui.js</h4>
+      <h4>依赖 <mark>itz-ui.js</mark></h4>
       <div class="txt-wrap js-maxlength">
         <textarea class="txt" placeholder="请输入" rows="3" maxlength="140"></textarea>
       </div>
@@ -159,7 +178,7 @@
         </label>
       </div>
 
-      <pre><code v-hl>&lt;label>
+      <pre><code class="html" v-hl>&lt;label>
   &lt;input type="checkbox" class="ipt-checkbox">
   &lt;span>复选框&lt;/span>
 &lt;/label>
